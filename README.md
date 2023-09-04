@@ -16,6 +16,7 @@
 
 - has_many :prototype
 - has_many :comment
+- has_many :messages
 
 ## prototype テーブル
 
@@ -29,7 +30,8 @@
 ### Association
 
 - belongs_to :user
-- has_many :comment
+- has_many :users, through: :room_users
+- has_many :messages
 
 ## comment テーブル
 
@@ -41,5 +43,5 @@
 
 ### Association
 
-- belongs_to :prototype
+- belongs_to :room
 - belongs_to :user
