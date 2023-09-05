@@ -25,7 +25,7 @@ class PrototypesController < ApplicationController
     prototype = Prototype.find(params[:id])
     prototype.update(prototype_params)
     if prototype.save
-      redirect_to user_path(prototype.user_id)
+      redirect_to prototype_path(prototype.id)
     else
       render :edit, status: :unprocessable_entity
     end
